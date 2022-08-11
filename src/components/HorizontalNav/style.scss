@@ -1,0 +1,29 @@
+.hn_container {
+    height: 91px;
+    width: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__bloc-logo {
+        display: inline-block;
+        margin-left: 2rem;
+    }
+    &__bloc-nav {
+        width: 100%;
+        margin: 0 auto;
+        display: inline-block;
+        margin-right: 2rem;
+        &__bloc-list {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            &__list {
+                &__nav-link {
+                    color: white;
+                }
+            }
+        }
+    }
+}

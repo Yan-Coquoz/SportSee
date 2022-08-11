@@ -4,6 +4,7 @@ import App from "./components/App/App";
 import { BrowserRouter } from "react-router-dom";
 
 import "./styles/index.scss";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -11,4 +12,3 @@ root.render(
         <App />
     </BrowserRouter>
 );
-

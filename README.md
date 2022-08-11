@@ -1,4 +1,4 @@
-# Boilerplate React Perso
+# SportSee
 
 Créer avec CRA (Create-React-App).
 
@@ -21,15 +21,16 @@ npm install
 yarn
 ```
 
-## Dépendances ajouté
+## Dépendances ajoutées
 
 - SASS.
 - Prop-types.
 - React Router Dom
-- prettier
-- eslint
+- Prettier
+- Eslint
+- Axios
 
-## Scripts ajouté
+## Scripts ajoutés
 
 En plus des scripts natif de CRA, il y a :
 
