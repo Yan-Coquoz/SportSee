@@ -21,6 +21,8 @@ npm install
 yarn
 ```
 
+Les routes du projet backend sont sur le `port:5000`
+
 ## Dépendances ajoutées
 
 - SASS.
