@@ -1,6 +1,9 @@
 .App {
-    text-align: center;
-    // max-width: 1440px;
+    position: relative; // max-width: 1440px;
+    &__container {
+        padding-left: calc(117px + 3rem);
+        width: 100%;
+    }
 }
 
 // Le projet doit être visible en 1024 / 780

@@ -1,58 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { userBase } from "../../API/api";
-import Loader from "../Loader";
+import React from "react";
+import PropTypes from "prop-types";
+import { renderHello } from "../../Utils/others";
 import "./style.scss";
 
-const Header = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [firstFetch, setFirstFetch] = useState(false);
-    const [isData, setIsData] = useState(false);
-    const [getError, setGetError] = useState(false);
-    const [getUserDatas, setGetUserDatas] = useState(null);
-
-    useEffect(() => {
-        async function getUserData() {
-            try {
-                if (!firstFetch) {
-                    setFirstFetch(true);
-                    const userDatas = await userBase(12);
-                    setGetUserDatas(userDatas);
-                    setGetError(false);
-                    setIsData(true);
-                }
-            } catch (error) {
-                setGetError(true);
-                setFirstFetch(false);
-                setIsData(false);
-            }
-        }
-        getUserData();
-    });
-
-    useEffect(() => {
-        if (!getError && isData) {
-            setIsLoading(false);
-        } else {
-            setIsLoading(true);
-        }
-    }, [isData]);
-
+const Header = ({ name }) => {
+    const time = renderHello();
     return (
         <div className="header-container">
-            {isLoading ? (
-                <Loader />
-            ) : (
-                <>
-                    <h1 className="header-container__accueil">
-                        Bonjour {getUserDatas.userInfos.firstName}
-                    </h1>
-                    <h3 className="header-container__commentaire">
-                        Félicitation ! Vous avez explosé vos objectifs hier 👏
-                    </h3>
-                </>
-            )}
+            <h1 className="header-container__accueil">
+                {time} <span>{name}</span>
+            </h1>
+            <h3 className="header-container__commentaire">
+                Félicitation ! Vous avez explosé vos objectifs hier 👏
+            </h3>
         </div>
     );
 };
-
+Header.propTypes = {
+    name: PropTypes.string.isRequired,
+};
 export default Header;

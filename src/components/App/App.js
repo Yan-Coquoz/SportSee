@@ -1,15 +1,15 @@
 import React from "react";
-import HorizontalNav from "../HorizontalNav";
-import VerticalNav from "../VerticalNav";
-import Header from "../Header";
+import Accueil from "../Accueil";
+import Dashboard from "../Dashboard";
 import "./App.scss";
 
 const App = () => {
     return (
         <div className="App">
-            <HorizontalNav />
-            <VerticalNav />
-            <Header />
+            <Accueil />
+            <div className="App__container">
+                <Dashboard />
+            </div>
         </div>
     );
 };

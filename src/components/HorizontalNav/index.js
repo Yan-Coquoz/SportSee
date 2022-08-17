@@ -1,6 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import "./style.scss";
 
@@ -18,43 +16,41 @@ const HorizontalNav = () => {
             <nav className="hn_container__bloc-nav">
                 <ul className="hn_container__bloc-nav__bloc-list">
                     <li className="hn_container__bloc-nav__bloc-list__list">
-                        <Link
+                        <a
                             to="/"
                             className="hn_container__bloc-nav__bloc-list__list__nav-link"
                         >
                             Accueil
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link
+                        <a
                             to="/"
                             className="hn_container__bloc-nav__bloc-list__list__nav-link"
                         >
                             Profil
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link
+                        <a
                             to="/"
                             className="hn_container__bloc-nav__bloc-list__list__nav-link"
                         >
                             Réglage
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link
+                        <a
                             to="/"
                             className="hn_container__bloc-nav__bloc-list__list__nav-link"
                         >
                             Communauté
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </nav>
         </div>
     );
 };
-
-// HorizontalNav.propTypes = {};
 
 export default HorizontalNav;
