@@ -1,0 +1,10 @@
+.radarchart {
+  width: 258px;
+  height: 263px;
+
+  background: #000;
+  border-radius: 10px;
+  &:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+}

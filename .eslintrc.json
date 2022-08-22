@@ -13,7 +13,8 @@
     },
     "plugins": ["react"],
     "rules": {
-        "indent": ["error", 4],
+        "no-tabs": ["error", { "allowIndentationTabs": false }],
+        // "indent": ["error", 4],
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
         "react/no-unescaped-entities": 0

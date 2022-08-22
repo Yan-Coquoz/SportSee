@@ -1,0 +1,30 @@
+// Tooltip
+
+.into {
+  font-size: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  &__tooltip-list {
+    display: block;
+    padding: 0.5rem;
+  }
+}
+
+li.recharts-legend-item span {
+  color: #74798c !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+li.recharts-legend-item:nth-child(1) {
+  margin-right: 2rem !important;
+}
+
+li.recharts-legend-item svg.recharts-surface {
+  height: 8px;
+  width: 8px;
+}

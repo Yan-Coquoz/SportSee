@@ -1,0 +1,37 @@
+.barchart__container {
+  position: relative;
+  width: 835px;
+  height: 320px;
+  background: #fbfbfb;
+  &:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  &-title {
+    position: absolute;
+    font-size: 15px;
+    left: 3.83%;
+    top: -0.5rem;
+    font-weight: bold;
+    color: #20253a;
+    line-height: 24px;
+    z-index: 10;
+  }
+}
+
+// BarChar compo
+div.recharts-default-tooltip {
+  border: none;
+  background: none;
+}
+div.recharts-default-tooltip:active {
+  border: none;
+  background: none;
+  outline: none !important;
+}
+.recharts-tooltip-wrapper:active:hover
+  + .recharts-tooltip-wrapper-left
+  + .recharts-tooltip-wrapper-top {
+  outline: none !important;
+  border: none !important;
+}
