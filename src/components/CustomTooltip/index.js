@@ -49,7 +49,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 CustomTooltip.propTypes = {
-  active: PropTypes.bool.isRequired,
+  active: PropTypes.bool,
   payload: PropTypes.arrayOf(PropTypes.object),
 };
 export default CustomTooltip;

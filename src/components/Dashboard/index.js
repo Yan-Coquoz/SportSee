@@ -6,6 +6,7 @@ import StatCard from "../StatCard";
 import GraphBarChart from "../BarChart";
 import GraphLineChart from "../LineChart";
 import GraphRadarChart from "../RadarChart";
+import GraphRadialChart from "../RadialChart";
 import "./style.scss";
 
 const Dashboard = () => {
@@ -13,7 +14,7 @@ const Dashboard = () => {
   const [firstFetch, setFirstFetch] = useState(false);
   const [isData, setIsData] = useState(false);
   const [getError, setGetError] = useState(false);
-
+  const [scores, setScores] = useState({});
   const [getUserDatas, setGetUserDatas] = useState(null);
   const getId = "18";
 
@@ -39,10 +40,17 @@ const Dashboard = () => {
   useEffect(() => {
     if (!getError && isData) {
       setIsLoading(false);
+      if (getUserDatas !== null) {
+        setScores(
+          getUserDatas.todayScore
+            ? getUserDatas.todayScore
+            : getUserDatas.score,
+        );
+      }
     } else {
       setIsLoading(true);
     }
-  }, [isData]);
+  }, [isData, scores]);
 
   return (
     <div className="dashboard">
@@ -59,15 +67,7 @@ const Dashboard = () => {
               <div className="dashboard__bloc-graphic__bloc-otherchart">
                 <GraphLineChart />
                 <GraphRadarChart />
-                <div
-                  style={{
-                    border: "1px solid black",
-                    width: "258px",
-                    height: "253px",
-                  }}
-                >
-                  PieChart
-                </div>
+                <GraphRadialChart score={scores} />
               </div>
             </div>
             <div className="dashboard__bloc-graphic__statcard">
