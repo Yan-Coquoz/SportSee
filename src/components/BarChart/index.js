@@ -1,5 +1,6 @@
 import React from "react";
 import CustomTooltip from "../CustomTooltip";
+import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
   BarChart,
@@ -12,51 +13,20 @@ import {
 } from "recharts";
 import "./style.scss";
 
-const data = [
-  {
-    day: "2020-07-01",
-    kilogram: 80,
-    calories: 240,
-  },
-  {
-    day: "2020-07-02",
-    kilogram: 80,
-    calories: 220,
-  },
-  {
-    day: "2020-07-03",
-    kilogram: 81,
-    calories: 280,
-  },
-  {
-    day: "2020-07-04",
-    kilogram: 81,
-    calories: 290,
-  },
-  {
-    day: "2020-07-05",
-    kilogram: 80,
-    calories: 160,
-  },
-  {
-    day: "2020-07-06",
-    kilogram: 78,
-    calories: 162,
-  },
-  {
-    day: "2020-07-07",
-    kilogram: 76,
-    calories: 390,
-  },
-];
-
-const GraphBarChart = () => {
+/**
+ * It's a function that takes an array of objects as a prop and returns a bar chart
+ *
+ * @prop   {Array}  sessions  [sessions description]
+ *
+ * @return  {React.ReactElement}            Bar Chart
+ */
+const GraphBarChart = ({ sessions }) => {
   return (
     <div className="barchart__container">
       <p className="barchart__container-title">Activité quotidienne</p>
       <ResponsiveContainer>
         <BarChart
-          data={data}
+          data={sessions}
           margin={{
             top: 0,
             right: 0,
@@ -87,6 +57,7 @@ const GraphBarChart = () => {
             // domain={["dataMin - 10", "dataMax + 10"]}
           />
           <Tooltip
+            // @ts-ignore
             content={<CustomTooltip />}
             labelStyle={{
               display: "none",
@@ -131,5 +102,7 @@ const GraphBarChart = () => {
     </div>
   );
 };
-
+GraphBarChart.propTypes = {
+  sessions: PropTypes.arrayOf(PropTypes.object),
+};
 export default GraphBarChart;

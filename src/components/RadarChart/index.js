@@ -1,90 +1,24 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-import { fromLowerToUpperCase } from "../../Utils/others";
+import PropTypes from "prop-types";
+import { reFormatDatas } from "../../Utils/others";
 import {
   ResponsiveContainer,
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   Radar,
-  Legend,
 } from "recharts";
 import "./style.scss";
 
-const data = {
-  userId: 12,
-  kind: {
-    1: "cardio",
-    2: "energy",
-    3: "endurance",
-    4: "strength",
-    5: "speed",
-    6: "intensity",
-  },
-  data: [
-    {
-      value: 80,
-      kind: 1,
-    },
-    {
-      value: 120,
-      kind: 2,
-    },
-    {
-      value: 140,
-      kind: 3,
-    },
-    {
-      value: 50,
-      kind: 4,
-    },
-    {
-      value: 200,
-      kind: 5,
-    },
-    {
-      value: 90,
-      kind: 6,
-    },
-  ],
-};
-
-const GraphRadarChart = () => {
-  /**
-   * @param {object} obj retour de l'API
-   * @returns {arrayOfObject}
-   */
-  function reFormatDatas(obj) {
-    return obj.data.map((nbrKind, key) => {
-      if (Object.keys(obj.kind)[key] == nbrKind.kind) {
-        const frenchData = englishToFrench(data.kind[key + 1]);
-
-        nbrKind.kind = fromLowerToUpperCase(frenchData);
-      }
-
-      return nbrKind;
-    });
-  }
-
-  function englishToFrench(str) {
-    switch (str) {
-      case "energy":
-        return "energie";
-      case "strength":
-        return "force";
-      case "speed":
-        return "vitesse";
-      case "intensity":
-        return "intensité";
-      case "cardio":
-        return "cardio";
-      case "endurance":
-        return "endurance";
-    }
-  }
-
-  const datas = reFormatDatas(data);
+/**
+ * It takes a prop called perf, which is an object with a bunch of properties, and returns a div   with a RadarChart inside of it
+ *
+ * @param   {Object}  perf  Contain datas from the API about user performances
+ *
+ * @return  {React.ReactElement}        [return description]
+ */
+const GraphRadarChart = ({ perf }) => {
+  const datas = reFormatDatas(perf);
 
   return (
     <div className="radarchart">
@@ -100,7 +34,6 @@ const GraphRadarChart = () => {
             radius={10}
             fontSize={12}
             strokeWidth={1}
-            wrapperStyle={{ magin: "2rem" }}
           />
           <Radar dataKey="value" stroke="red" fill="red" fillOpacity={0.6} />
         </RadarChart>
@@ -109,4 +42,7 @@ const GraphRadarChart = () => {
   );
 };
 
+GraphRadarChart.propTypes = {
+  perf: PropTypes.object,
+};
 export default GraphRadarChart;

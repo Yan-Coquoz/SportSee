@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import CustomCursor from "../CustomCursor";
+import { handleFormatTick } from "../../Utils/others";
+
+import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
   LineChart,
@@ -12,66 +15,7 @@ import {
 import CustomTooltip from "../CustomTooltip";
 import "./style.scss";
 
-const Data = {
-  userId: 12,
-  sessions: [
-    {
-      day: 1,
-      sessionLength: 30,
-    },
-    {
-      day: 2,
-      sessionLength: 23,
-    },
-    {
-      day: 3,
-      sessionLength: 45,
-    },
-    {
-      day: 4,
-      sessionLength: 50,
-    },
-    {
-      day: 5,
-      sessionLength: 10,
-    },
-    {
-      day: 6,
-      sessionLength: 5,
-    },
-    {
-      day: 7,
-      sessionLength: 60,
-    },
-  ],
-};
-
-const GraphLineChart = () => {
-  /**
-   * @param {number} numDay  the number of the day in the week
-   * @returns {string}
-   */
-  function handleFormatTick(numDay) {
-    const days = ["L", "M", "M", "J", "V", "S", "D"];
-
-    switch (numDay) {
-      case 1:
-        return days[0];
-      case 2:
-        return days[1];
-      case 3:
-        return days[2];
-      case 4:
-        return days[3];
-      case 5:
-        return days[4];
-      case 6:
-        return days[5];
-      case 7:
-        return days[6];
-    }
-  }
-
+const GraphLineChart = ({ average }) => {
   return (
     <div className="linechart">
       <p className="linechart__title">Durée moyenne des sessions</p>
@@ -81,7 +25,7 @@ const GraphLineChart = () => {
         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
       >
         <LineChart
-          data={Data.sessions}
+          data={average.sessions}
           style={{ background: "red", borderRadius: "10px" }}
           width={258}
           height={235}
@@ -96,11 +40,13 @@ const GraphLineChart = () => {
             stroke={"#FFF"}
             strokeWidth={2}
           />
-          <YAxis hide padding={{ top: 70, bottom: 0 }} />
+          <YAxis hide padding={{ top: 70, bottom: 20 }} />
           <XAxis
             dataKey="day"
             axisLine={false}
-            tickLine={false}
+            tickLine={
+              false /* It's a function that takes a number as a parameter and returns a string. */
+            }
             tickFormatter={handleFormatTick}
             padding={{ right: 20, left: 20 }}
             stroke={"#fff"}
@@ -124,4 +70,7 @@ const GraphLineChart = () => {
   );
 };
 
+GraphLineChart.propTypes = {
+  average: PropTypes.object,
+};
 export default GraphLineChart;

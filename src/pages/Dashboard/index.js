@@ -31,9 +31,8 @@ const Dashboard = () => {
         if (!firstFetch) {
           setFirstFetch(true);
           const userDatas = await getAllDatas(getId.id);
-
           setGetUserDatas(userDatas.user.data.data);
-          setGetActivityDatas(userDatas.activity.data.data);
+          setGetActivityDatas(userDatas.activity.data.data.sessions);
           setGetPerfDatas(userDatas.perf.data.data);
           setGetAverageDatas(userDatas.average.data.data);
 
@@ -75,10 +74,10 @@ const Dashboard = () => {
           </div>
           <div className="dashboard__bloc-graphic">
             <div className="dashboard__bloc-graphic__bloc-chart">
-              <GraphBarChart />
+              <GraphBarChart sessions={getActivityDatas} />
               <div className="dashboard__bloc-graphic__bloc-otherchart">
-                <GraphLineChart />
-                <GraphRadarChart />
+                <GraphLineChart average={getAverageDatas} />
+                <GraphRadarChart perf={getPerfDatas} />
                 <GraphRadialChart score={scores} />
               </div>
             </div>
