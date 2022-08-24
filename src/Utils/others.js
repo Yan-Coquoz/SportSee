@@ -90,3 +90,12 @@ export function handleFormatTick(numDay) {
       return days[6];
   }
 }
+
+/**
+ * Convert and format the date to a number of the day(to: '2020-07-01' from '1')
+ * @param {String} day - The date from API.
+ * @returns {Number} The day of the month.
+ */
+export function customTick(day) {
+  return Number(day.slice(8));
+}

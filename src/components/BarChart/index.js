@@ -1,5 +1,6 @@
 import React from "react";
 import CustomTooltip from "../CustomTooltip";
+import { customTick } from "../../Utils/others";
 import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
@@ -37,13 +38,15 @@ const GraphBarChart = ({ sessions }) => {
         >
           <CartesianGrid strokeDasharray="2 2" vertical={false} />
           <XAxis
+            dataKey={"day"}
             axisLine={false}
             domain={["dataMin + 1", "dataMax + 1"]}
             tickLine={false}
+            tickFormatter={customTick}
           />
           <YAxis
             orientation="right"
-            // interval={"preserveStartEnd"}
+            interval={"preserveStartEnd"}
             axisLine={false}
             allowDecimals={false}
             dataKey={"kilogram"}
