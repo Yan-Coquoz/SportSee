@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { fromLowerToUpperCase } from "../../Utils/others";
 import {
   ResponsiveContainer,
   RadarChart,
@@ -65,9 +66,7 @@ const GraphRadarChart = () => {
       return nbrKind;
     });
   }
-  function fromLowerToUpperCase(str) {
-    return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
-  }
+
   function englishToFrench(str) {
     switch (str) {
       case "energy":

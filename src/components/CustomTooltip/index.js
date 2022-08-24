@@ -6,9 +6,9 @@ import PropTypes from "prop-types";
  * If the payload has a unit property, return a paragraph with the value and unit.
  * Otherwise, if the payload has a length, return a list of the values.
  * Otherwise, return an empty string.
- * @param {Array} payload - [{payload: {…}, unit: "kCal", value: "1.5", dataKey: "calories", color: "#8884d8"}]
+ * @param {Array<Object>} payload - [{payload: {…}, unit: "kCal", value: "1.5", dataKey: "calories", color: "#8884d8"}]
  */
-const placeLabelIntoTooltip = (payload) => {
+function placeLabelIntoTooltip(payload) {
   if (typeof payload[0].unit !== "undefined") {
     return (
       <p style={{ textAlign: "center" }}>
@@ -31,7 +31,7 @@ const placeLabelIntoTooltip = (payload) => {
   }
 
   return "";
-};
+}
 
 /**
  * If the tooltip is active and there is data to display, then display the data.

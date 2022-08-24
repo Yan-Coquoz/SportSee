@@ -21,18 +21,19 @@
 }
 
 // BarChar compo
-div.recharts-default-tooltip {
-  border: none;
-  background: none;
+.recharts {
+  &-tooltip-wrapper:active:hover
+    + .recharts-tooltip-wrapper-left
+    + .recharts-tooltip-wrapper-top {
+    outline: none !important;
+    border: none !important;
+  }
+  // <Legend/>
+  &-default-legend {
+    margin-top: 0.5rem !important;
+    padding-right: 1.5rem !important;
+  }
 }
-div.recharts-default-tooltip:active {
-  border: none;
-  background: none;
-  outline: none !important;
-}
-.recharts-tooltip-wrapper:active:hover
-  + .recharts-tooltip-wrapper-left
-  + .recharts-tooltip-wrapper-top {
-  outline: none !important;
-  border: none !important;
+.into__tooltip-list {
+  font-size: 10px;
 }

@@ -54,7 +54,7 @@ const GraphBarChart = () => {
   return (
     <div className="barchart__container">
       <p className="barchart__container-title">Activité quotidienne</p>
-      <ResponsiveContainer width="100%" Height={155}>
+      <ResponsiveContainer>
         <BarChart
           data={data}
           margin={{
@@ -63,14 +63,12 @@ const GraphBarChart = () => {
             left: 0,
             bottom: 0,
           }}
-          width={300}
-          height={155}
           barGap={6}
         >
           <CartesianGrid strokeDasharray="2 2" vertical={false} />
           <XAxis
             axisLine={false}
-            domain={["dataMin", "dataMax"]}
+            domain={["dataMin + 1", "dataMax + 1"]}
             tickLine={false}
           />
           <YAxis
@@ -98,18 +96,19 @@ const GraphBarChart = () => {
               background: "red",
               border: "none",
               outline: "none",
-              width: "39px",
-              height: "63px",
+              width: "50px",
+              height: "70px",
+              textAlign: "center",
+              lineHeight: "1.5",
             }}
             margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
           />
           <Legend
             height={40}
-            width="100%"
-            margin={{ top: 10, left: -50, right: 0, bottom: 0 }}
             verticalAlign="top"
             align="right"
             iconType={"circle"}
+            style={{ margin: "1rem auto", width: "100px" }}
           />
           <Bar
             dataKey="kilogram"

@@ -1,8 +1,9 @@
 .App {
-  position: relative; // max-width: 1440px;
+  position: relative;
   &__container {
     padding-left: calc(117px + 3rem);
     width: 100%;
+    height: 100%;
   }
 }
 
