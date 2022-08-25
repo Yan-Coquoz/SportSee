@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { getAllDatas } from "../../API/api";
@@ -24,7 +23,7 @@ const Dashboard = () => {
   const [getPerfDatas, setGetPerfDatas] = useState(null);
 
   const getId = useParams();
-
+  localStorage.setItem("id", getId);
   useEffect(() => {
     async function getUserData() {
       try {

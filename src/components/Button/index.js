@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 /**
  * It's a function that returns a list item with a button inside of it. The button has an image inside
- * of it.
+ * of it corresponding to a micronutrient.
  * @prop   {String}  srcImg  Parameter src of the img Tag
  * @prop   {String}  launch  Button trigger, activates a function in its parent.
  *

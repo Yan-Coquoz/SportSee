@@ -1,5 +1,4 @@
 // Tooltip
-
 .into {
   font-size: 7px;
   display: flex;
@@ -12,6 +11,12 @@
   &__tooltip-list {
     display: block;
     padding: 0.5rem;
+    font-weight: bold;
+  }
+  &__tooltip-para {
+    text-align: center;
+    font-weight: bold;
+    font-size: 9px;
   }
 }
 

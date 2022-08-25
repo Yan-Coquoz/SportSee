@@ -2,10 +2,16 @@
 
 - ![Author](<https://img.shields.io/badge/Author-Yan Coquoz-">)
 - ![GitHub repo size](<https://img.shields.io/github/repo-size/Yan-Coquoz/SportSee>)  
+![GitHub top language](https://img.shields.io/github/languages/top/Yan-Coquoz/SportSee)
+![GitHub language count](https://img.shields.io/github/languages/count/Yan-Coquoz/SportSee)
 
 ## Frontend
 
-### Prerequisite
+### General information
+
+This repo contains all the source code to run the application of the sports analytics dashboard SportSee.
+
+### Prerequisites
 
 - A text editor like `VSCode, Vim, IntelliJ...`
 - [Node.js < v.16](https://nodejs.org/en/)
@@ -13,7 +19,11 @@
 
 ### Project setup
 
-- Clone the repo with git `git clone Adress_Of_The_Repo`
+- Clone the repo on your computer.
+
+````bash
+git clone Adress_Of_The_Repo
+````
 
 - Package installations after cloning.
 
@@ -36,13 +46,15 @@ yarn start
 
 ### Added dependencies
 
-- SASS.
-- Prop-types.
-- React Router Dom
-- Prettier
-- Eslint
-- Axios
-- JsDoc
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/react)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/prop-types)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/react-router-dom)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/recharts?label=Rechart)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/axios)
+- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/jsdoc)
+- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/sass)
+- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/prettier)
+- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/eslint) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/eslint-config-prettier) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/eslint-plugin-react)
 
 ### Basic script with CRA
 
@@ -62,10 +74,14 @@ In addition to native CRA scripts, there are:
 
 ## Backend
 
+- [Do the same manipulation as here](#project-setup)
+- [The backend repo](https://github.com/Yan-Coquoz/P12-Sportsee-backend)
+
 ### Routes
 
 - base URL : `http://localhost:5000/user/`
   - Slug :
+    - id : `id`
     - Activity : `id/activity`
     - Average session : `id/average-sessions`
     - performance : `id/performance`

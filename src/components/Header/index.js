@@ -7,7 +7,7 @@ import "./style.scss";
  * It's a function that takes in a name and returns a div with a h1 and a h3 inside.
  * @prop   {?String}  name  Name's user
  *
- * @return  {React.ReactElement} A function that returns a component.
+ * @return  {React.ReactElement} A function that returns a component with the name of the user.
  */
 const Header = ({ name }) => {
   const time = renderHello();

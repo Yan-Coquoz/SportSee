@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import CustomTooltip from "../CustomTooltip";
 import { customTick } from "../../Utils/others";

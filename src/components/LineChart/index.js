@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// @ts-nocheck
 import React from "react";
 import CustomCursor from "../CustomCursor";
 import { handleFormatTick } from "../../Utils/others";
@@ -15,6 +15,13 @@ import {
 import CustomTooltip from "../CustomTooltip";
 import "./style.scss";
 
+/**
+ * It's a function that returns a div with a title, a responsive container, a line chart, a line, a y
+ * axis, an x axis, and a tooltip
+ *
+ * @prop {Object} average Data from a user to barChart
+ * @returns {React.ReactElement} A graph line chart
+ */
 const GraphLineChart = ({ average }) => {
   return (
     <div className="linechart">
@@ -44,9 +51,7 @@ const GraphLineChart = ({ average }) => {
           <XAxis
             dataKey="day"
             axisLine={false}
-            tickLine={
-              false /* It's a function that takes a number as a parameter and returns a string. */
-            }
+            tickLine={false}
             tickFormatter={handleFormatTick}
             padding={{ right: 20, left: 20 }}
             stroke={"#fff"}
@@ -58,9 +63,9 @@ const GraphLineChart = ({ average }) => {
               color: "#000",
               width: "39px",
               height: "25px",
+              outline: "none",
             }}
-            stroke={"#FFF"}
-            dataKey="sessionLength"
+            labelStyle={{ display: "none", border: "none" }}
             content={<CustomTooltip />}
             cursor={<CustomCursor />}
           />
@@ -71,6 +76,14 @@ const GraphLineChart = ({ average }) => {
 };
 
 GraphLineChart.propTypes = {
-  average: PropTypes.object,
+  average: PropTypes.shape({
+    userId: PropTypes.number.isRequired,
+    sessions: PropTypes.arrayOf(
+      PropTypes.shape({
+        day: PropTypes.number.isRequired,
+        sessionLength: PropTypes.number.isRequired,
+      }).isRequired,
+    ),
+  }).isRequired,
 };
 export default GraphLineChart;

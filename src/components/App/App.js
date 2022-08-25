@@ -3,7 +3,7 @@ import Accueil from "../../pages/Accueil";
 import HorizontalNav from "../../components/HorizontalNav";
 import VerticalNav from "../../components/VerticalNav";
 import Dashboard from "../../pages/Dashboard";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.scss";
 
 /**
@@ -23,6 +23,7 @@ const App = () => {
           <Route path="user">
             <Route path=":id" element={<Dashboard />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </div>

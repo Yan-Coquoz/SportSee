@@ -4,11 +4,12 @@ import { fromLowerToUpperCase } from "../../Utils/others";
 import { Link } from "react-router-dom";
 import "./style.scss";
 
+/**
+ * It returns a div with a logo and a nav with a list of links
+ * @returns {React.ReactElement} A component that displays a horizontal navigation bar.
+ */
 const HorizontalNav = () => {
   const links = ["accueil", "profile", "réglage", "communauté"];
-  let id = 12;
-
-  const slugProfil = "user/";
 
   return (
     <div className="hn_container">
@@ -24,23 +25,13 @@ const HorizontalNav = () => {
         <ul className="hn_container__bloc-nav__bloc-list">
           {links.map((link, key) => {
             return (
-              <li className="hn_container__bloc-nav__bloc-list__list" key={key}>
-                {link === "profile" ? (
-                  <Link
-                    to={slugProfil + id}
-                    className="hn_container__bloc-nav__bloc-list__list__nav-link"
-                  >
-                    {fromLowerToUpperCase(link)}
-                  </Link>
-                ) : (
-                  <Link
-                    to="/"
-                    className="hn_container__bloc-nav__bloc-list__list__nav-link"
-                  >
-                    {fromLowerToUpperCase(link)}
-                  </Link>
-                )}
-              </li>
+              <Link
+                to="/"
+                className="hn_container__bloc-nav__bloc-list__list__nav-link"
+                key={key}
+              >
+                {fromLowerToUpperCase(link)}
+              </Link>
             );
           })}
         </ul>

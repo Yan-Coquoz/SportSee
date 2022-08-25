@@ -6,6 +6,10 @@ import natation from "../../assets/natation.svg";
 import cyclisme from "../../assets/cyclisme.svg";
 import musculation from "../../assets/musculation.svg";
 
+/**
+ * It returns a div with a nav and copyright
+ * @returns {React.ReactElement} A component
+ */
 const VerticalNav = () => {
   function handleGetMeditationData() {
     console.log("mediatation");

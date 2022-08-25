@@ -1,7 +1,6 @@
 .linechart {
   width: 258px;
   height: 263px;
-
   background-color: red;
   position: relative;
   border-radius: 10px;
@@ -32,7 +31,4 @@
 }
 .recharts-layer.recharts-line + .recharts-curve.recharts-line-curve {
   width: 258px !important;
-}
-.recharts-tooltip-cursor {
-  // color: #fff;
 }

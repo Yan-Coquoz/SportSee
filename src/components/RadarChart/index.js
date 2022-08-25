@@ -43,6 +43,10 @@ const GraphRadarChart = ({ perf }) => {
 };
 
 GraphRadarChart.propTypes = {
-  perf: PropTypes.object,
+  perf: PropTypes.shape({
+    userId: PropTypes.number,
+    data: PropTypes.shape({ value: PropTypes.number, kind: PropTypes.string }),
+    kind: PropTypes.arrayOf(PropTypes.string),
+  }),
 };
 export default GraphRadarChart;
