@@ -1,5 +1,5 @@
 {
-  "data": {
+  "user": {
     "id": 12,
     "userInfos": {
       "firstName": "Karl",
@@ -14,7 +14,7 @@
       "lipidCount": 50
     }
   },
-  "sessions": {
+  "session": {
     "userId": 12,
     "sessions": [
       {
@@ -54,7 +54,7 @@
       }
     ]
   },
-  "line": {
+  "average": {
     "userId": 12,
     "sessions": [
       {
@@ -87,7 +87,7 @@
       }
     ]
   },
-  "radar": {
+  "perf": {
     "userId": 12,
     "kind": {
       "1": "cardio",

@@ -1,5 +1,4 @@
 import axios from "axios";
-// const datas = "/mockeddatas.json";
 const baseUrl = "http://localhost:5000/user/";
 
 /**
@@ -29,6 +28,7 @@ export const getAllDatas = async (id) => {
     });
 };
 
-// export const getAllDatasMocked = () => {
-//   return axios.get(datas).then((response) => response.data);
-// };
+const datas = "/mockeddatas.json";
+export const getAllDatasMocked = () => {
+  return axios.get(datas).then((response) => response.data);
+};

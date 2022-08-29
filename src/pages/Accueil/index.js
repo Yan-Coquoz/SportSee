@@ -21,6 +21,9 @@ const Accueil = () => {
         <div className="accueil__bloc-links__link">
           <Link to={"user/18"}>18</Link>
         </div>
+        <div className="accueil__bloc-links__link">
+          <Link to={"user"}>Mock</Link>
+        </div>
       </div>
     </div>
   );

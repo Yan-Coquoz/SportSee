@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getAllDatas } from "../../API/api";
+import { getAllDatas, getAllDatasMocked } from "../../API/api";
 import User from "../../Models/User";
 import Perf from "../../Models/Perf";
 import Session from "../../Models/Session";
@@ -29,35 +29,68 @@ const Dashboard = () => {
 
   const getId = useParams();
 
-  useEffect(() => {
-    async function getUserData() {
-      try {
-        if (!firstFetch) {
-          setFirstFetch(true);
-          const userDatas = await getAllDatas(getId.id);
+  if (Object.keys(getId).length !== 0) {
+    localStorage.setItem("id", getId.id);
+    useEffect(() => {
+      async function getUserData() {
+        try {
+          if (!firstFetch) {
+            setFirstFetch(true);
 
-          const user = new User(userDatas.user.data);
-          const perf = new Perf(userDatas.perf.data);
-          const session = new Session(userDatas.activity.data);
-          const average = new Average(userDatas.average.data);
+            const userDatas = await getAllDatas(getId.id);
+            const user = new User(userDatas.user.data);
+            const perf = new Perf(userDatas.perf.data);
+            const average = new Average(userDatas.average.data);
+            const session = new Session(userDatas.activity.data);
 
-          // Placement of data in the useState
-          setGetUserDatas(user.data);
-          setGetActivityDatas(session.data);
-          setGetPerfDatas(perf.data);
-          setGetAverageDatas(average.data);
+            // Placement of data in the useState
+            setGetUserDatas(user.data);
+            setGetActivityDatas(session.data);
+            setGetPerfDatas(perf.data);
+            setGetAverageDatas(average.data);
 
-          setGetError(false);
-          setIsData(true);
+            setGetError(false);
+            setIsData(true);
+          }
+        } catch (error) {
+          setGetError(true);
+          setFirstFetch(false);
+          setIsData(false);
         }
-      } catch (error) {
-        setGetError(true);
-        setFirstFetch(false);
-        setIsData(false);
       }
-    }
-    getUserData();
-  }, []);
+      getUserData();
+    }, []);
+  } else {
+    localStorage.removeItem("id");
+    useEffect(() => {
+      async function getMockedDatas() {
+        try {
+          if (!firstFetch) {
+            const userDatas = await getAllDatasMocked();
+
+            const user = new User(userDatas.user);
+            const perf = new Perf(userDatas.perf);
+            const average = new Average(userDatas.average);
+            const session = new Session(userDatas.session);
+
+            // Placement of data in the useState
+            setGetUserDatas(user.props);
+            setGetPerfDatas(perf.props);
+            setGetAverageDatas(average.props);
+            setGetActivityDatas(session.props.sessions);
+
+            setGetError(false);
+            setIsData(true);
+          }
+        } catch (error) {
+          setGetError(true);
+          setFirstFetch(false);
+          setIsData(false);
+        }
+      }
+      getMockedDatas();
+    }, []);
+  }
 
   useEffect(() => {
     if (!getError && isData) {
