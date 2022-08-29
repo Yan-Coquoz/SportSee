@@ -15,14 +15,14 @@ This repo contains all the source code to run the application of the sports anal
 
 - A text editor like `VSCode, Vim, IntelliJ...`
 - [Node.js < v.16](https://nodejs.org/en/)
-- [A github Account](https://github.com/)
+- [Git](https://git-scm.com/)
 
 ### Project setup
 
 - Clone the repo on your computer.
 
 ````bash
-git clone Adress_Of_The_Repo
+git clone https://github.com/Yan-Coquoz/SportSee.git
 ````
 
 - Package installations after cloning.
@@ -51,6 +51,10 @@ yarn start
 - ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/react-router-dom)
 - ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/recharts?label=Rechart)
 - ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/axios)
+
+---
+dev dependencies:
+
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/jsdoc)
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/sass)
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/prettier)
@@ -72,16 +76,19 @@ In addition to native CRA scripts, there are:
 - `clean:all` : delete the node modules and build folders, dist as well as the package-lock file.json.
 - `jsdoc`     : generate JsDoc.
 
+### Routes Frontend
+
+- Base URL : `http://localhost:3000/`
+  - slug :
+    - user: `user/id` (12 or 18)
+
+exemple :
+
+- [http://localhost:3000/](http://localhost:3000/)
+- [http://localhost:3000/user/12](http://localhost:3000/user/12)
+- [http://localhost:3000/user/18](http://localhost:3000/user/18)
+
 ## Backend
 
 - [Do the same manipulation as here](#project-setup)
 - [The backend repo](https://github.com/Yan-Coquoz/P12-Sportsee-backend)
-
-### Routes
-
-- base URL : `http://localhost:5000/user/`
-  - Slug :
-    - id : `id`
-    - Activity : `id/activity`
-    - Average session : `id/average-sessions`
-    - performance : `id/performance`

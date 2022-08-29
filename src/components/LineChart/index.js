@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from "react";
 import CustomCursor from "../CustomCursor";
-import { handleFormatTick } from "../../Utils/others";
+import { handleFormatTick } from "../../Utils/formattedDatas";
 
 import PropTypes from "prop-types";
 import {

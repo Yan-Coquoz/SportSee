@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from "react";
 import CustomTooltip from "../CustomTooltip";
-import { customTick } from "../../Utils/others";
+import { customTick } from "../../Utils/formattedDatas";
 import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
@@ -51,17 +51,12 @@ const GraphBarChart = ({ sessions }) => {
             axisLine={false}
             allowDecimals={false}
             dataKey={"kilogram"}
-            yAxisId={1} // doit avoir un correspondant dans Bar
+            // doit avoir un correspondant dans Bar
+            yAxisId={1}
             domain={["dataMin - 10", "dataMax + 10"]}
           />
-          <YAxis
-            hide
-            dataKey={"calories"}
-            yAxisId={2}
-            // domain={["dataMin - 10", "dataMax + 10"]}
-          />
+          <YAxis hide dataKey={"calories"} yAxisId={2} />
           <Tooltip
-            // @ts-ignore
             content={<CustomTooltip />}
             labelStyle={{
               display: "none",
@@ -107,6 +102,12 @@ const GraphBarChart = ({ sessions }) => {
   );
 };
 GraphBarChart.propTypes = {
-  sessions: PropTypes.arrayOf(PropTypes.object),
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string,
+      kilogram: PropTypes.number,
+      calories: PropTypes.number,
+    }),
+  ),
 };
 export default GraphBarChart;

@@ -16,10 +16,10 @@ const Accueil = () => {
       </div>
       <div className="accueil__bloc-links">
         <div className="accueil__bloc-links__link">
-          <Link to={"user/18"}>18</Link>
+          <Link to={"user/12"}>12</Link>
         </div>
         <div className="accueil__bloc-links__link">
-          <Link to={"user/12"}>12</Link>
+          <Link to={"user/18"}>18</Link>
         </div>
       </div>
     </div>

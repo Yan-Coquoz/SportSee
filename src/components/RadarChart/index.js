@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { reFormatDatas } from "../../Utils/others";
+import { reFormatDatas } from "../../Utils/formattedDatas";
 import {
   ResponsiveContainer,
   RadarChart,
@@ -13,9 +13,9 @@ import "./style.scss";
 /**
  * It takes a prop called perf, which is an object with a bunch of properties, and returns a div   with a RadarChart inside of it
  *
- * @param   {Object}  perf  Contain datas from the API about user performances
+ * @prop   {Object}  perf  Contain datas from the API about user performances
  *
- * @return  {React.ReactElement}        [return description]
+ * @return  {React.ReactElement}
  */
 const GraphRadarChart = ({ perf }) => {
   const datas = reFormatDatas(perf);
@@ -44,9 +44,10 @@ const GraphRadarChart = ({ perf }) => {
 
 GraphRadarChart.propTypes = {
   perf: PropTypes.shape({
-    userId: PropTypes.number,
-    data: PropTypes.shape({ value: PropTypes.number, kind: PropTypes.string }),
-    kind: PropTypes.arrayOf(PropTypes.string),
+    userId: PropTypes.number.isRequired,
+    kind: PropTypes.object,
+    data: PropTypes.arrayOf(PropTypes.object),
   }),
 };
+
 export default GraphRadarChart;
