@@ -61,6 +61,7 @@ const Dashboard = () => {
       getUserData();
     }, []);
   } else {
+    // Mocked Data
     localStorage.removeItem("id");
     useEffect(() => {
       async function getMockedDatas() {

@@ -6,7 +6,7 @@ import "./style.scss";
 /**
  * It takes a data object as an argument, and returns a RadialBarChart component
  *
- * @param   {object}  score  score de l'utilisateur.
+ * @param   {object}  score  Contain datas from the API about user score.
  *
  * @return  {React.ReactElement}
  */

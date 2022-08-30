@@ -18,7 +18,7 @@ import "./style.scss";
 /**
  * It's a function that takes an array of objects as a prop and returns a bar chart
  *
- * @prop   {Array}  sessions  [sessions description]
+ * @prop   {Array}  sessions  Data from a user to BarChart
  *
  * @return  {React.ReactElement}            Bar Chart
  */
@@ -51,7 +51,7 @@ const GraphBarChart = ({ sessions }) => {
             axisLine={false}
             allowDecimals={false}
             dataKey={"kilogram"}
-            // doit avoir un correspondant dans Bar
+            // There must be a match with the Bar component
             yAxisId={1}
             domain={["dataMin - 10", "dataMax + 10"]}
           />

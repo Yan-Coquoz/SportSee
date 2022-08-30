@@ -19,7 +19,7 @@ import "./style.scss";
  * It's a function that returns a div with a title, a responsive container, a line chart, a line, a y
  * axis, an x axis, and a tooltip
  *
- * @prop {Object} average Data from a user to barChart
+ * @prop {Object} average Data from a user to LineChart
  * @returns {React.ReactElement} A graph line chart
  */
 const GraphLineChart = ({ average }) => {

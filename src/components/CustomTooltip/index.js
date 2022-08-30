@@ -5,8 +5,8 @@ import { placeLabelIntoTooltip } from "../../Utils/others";
 
 /**
  * If the tooltip is active and there is data to display, then display the data.
- * @prop {Boolean} active si le composant est actif ou non (passage de la souris)
- * @prop {ArrayOfObject} payload Les propriétés de chaque Barres
+ * @prop {Boolean} active whether the component is active or not (mouse over)
+ * @prop {ArrayOfObject} payload Properties of each componant Bar
  */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
