@@ -84,9 +84,10 @@ In addition to native CRA scripts, there are:
 
 exemple :
 
-- [http://localhost:3000/](http://localhost:3000/)
-- [http://localhost:3000/user/12](http://localhost:3000/user/12)
-- [http://localhost:3000/user/18](http://localhost:3000/user/18)
+- [http://localhost:3000/](http://localhost:3000/) : home
+- [http://localhost:3000/user/12](http://localhost:3000/user/12) : user id 12
+- [http://localhost:3000/user/18](http://localhost:3000/user/18) : user id 18
+- [http://localhost:3000/user](http://localhost:3000/user) : Mocked datas
 
 ## Backend
 

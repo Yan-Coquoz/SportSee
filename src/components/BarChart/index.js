@@ -17,7 +17,6 @@ import "./style.scss";
 
 /**
  * It's a function that takes an array of objects as a prop and returns a bar chart
- *
  * @prop   {Array}  sessions  Data from a user to BarChart
  *
  * @return  {React.ReactElement}            Bar Chart
