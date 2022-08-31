@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.scss";
 
 const Error = () => {
-  // écrire le code ici
+  localStorage.removeItem("error");
   return (
     <div className="error">
       <h1>404</h1>

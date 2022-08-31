@@ -1,3 +1,4 @@
+// @ts-nocheck
 import axios from "axios";
 const baseUrl = "http://localhost:5000/user/";
 
@@ -20,6 +21,10 @@ export const getAllDatas = async (id) => {
     .all(endPoints.map((endPoint) => axios.get(endPoint)))
     .then(
       axios.spread((user, activity, average, perf) => {
+        JSON.stringify(user);
+        JSON.stringify(activity);
+        JSON.stringify(average);
+        JSON.stringify(perf);
         return { user, activity, average, perf };
       }),
     )
