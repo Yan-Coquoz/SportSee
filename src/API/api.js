@@ -27,7 +27,8 @@ export const getAllDatas = async (id) => {
       throw new Error(error);
     });
 };
-// call for mocked Datas
+
+/* A mocked data for the app. */
 const datas = "/mockeddatas.json";
 export const getAllDatasMocked = () => {
   return axios.get(datas).then((response) => response.data);
