@@ -3,6 +3,7 @@ import Accueil from "../../pages/Accueil";
 import HorizontalNav from "../../components/HorizontalNav";
 import VerticalNav from "../../components/VerticalNav";
 import Dashboard from "../../pages/Dashboard";
+import Error from "../../pages/Error";
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.scss";
 
@@ -25,6 +26,8 @@ const App = () => {
             <Route path=":id" element={<Dashboard />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
+
+          <Route path="error" element={<Error />} />
         </Routes>
       </div>
     </div>

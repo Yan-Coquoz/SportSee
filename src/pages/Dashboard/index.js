@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getAllDatas, getAllDatasMocked } from "../../API/api";
+
 import User from "../../Models/User";
 import Perf from "../../Models/Perf";
 import Session from "../../Models/Session";
@@ -28,6 +29,7 @@ const Dashboard = () => {
   const [getPerfDatas, setGetPerfDatas] = useState(null);
 
   const getId = useParams();
+  const navigate = useNavigate();
 
   if (Object.keys(getId).length !== 0) {
     localStorage.setItem("id", getId.id);
@@ -38,6 +40,7 @@ const Dashboard = () => {
             setFirstFetch(true);
 
             const userDatas = await getAllDatas(getId.id);
+
             const user = new User(userDatas.user.data);
             const perf = new Perf(userDatas.perf.data);
             const average = new Average(userDatas.average.data);
@@ -105,8 +108,17 @@ const Dashboard = () => {
       }
     } else {
       setIsLoading(true);
+      const launchError = setTimeout(() => {
+        // API server is down
+        if (localStorage.getItem("error") === "Network Error") {
+          localStorage.removeItem("error");
+          navigate("/error");
+          console.log("Error 503 Service Unavailable");
+        }
+      }, 1500);
+      return () => clearTimeout(launchError);
     }
-  }, [isData, scores]);
+  }, [isData, scores, localStorage.getItem("error")]);
 
   return (
     <div className="dashboard">

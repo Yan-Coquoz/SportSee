@@ -9,6 +9,7 @@ import "./style.scss";
  * @return  {React.ReactElement}
  */
 const Accueil = () => {
+  localStorage.removeItem("error");
   return (
     <div className="accueil">
       <div className="accueil__bloc-logo">

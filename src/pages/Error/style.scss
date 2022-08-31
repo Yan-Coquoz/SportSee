@@ -1,0 +1,20 @@
+.error {
+  margin-top: 15rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  & h1 {
+    font-size: 15rem;
+  }
+  &__retour {
+    text-align: center;
+    & a {
+      color: red;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

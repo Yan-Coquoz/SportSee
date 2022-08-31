@@ -24,6 +24,7 @@ export const getAllDatas = async (id) => {
       }),
     )
     .catch((error) => {
+      localStorage.setItem("error", error.message);
       throw new Error(error);
     });
 };
