@@ -9,3 +9,10 @@
 
 // Le projet doit être visible en 1024 / 780
 // version mobile pas obligatoire.
+@media screen and (max-width: 1330px) {
+  .App {
+    &__container {
+      padding-left: calc(117px + 1rem);
+    }
+  }
+}

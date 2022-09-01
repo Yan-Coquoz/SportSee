@@ -1,9 +1,10 @@
 .radialchart {
-  width: 258px;
+  width: 100%;
   height: 263px;
   background-color: #f8f8f8;
   border-radius: 10px;
   position: relative;
+  min-width: 210px;
   &:hover {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   }
@@ -39,6 +40,26 @@
       font-weight: bold;
       width: 50%;
       color: #74798c;
+    }
+  }
+}
+@media screen and (max-width: 1330px) {
+  .radialchart {
+    height: 230px;
+
+    &__bloc-score {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .radialchart {
+    height: 210px;
+
+    &__bloc-score {
+      width: 110px;
+      height: 110px;
     }
   }
 }

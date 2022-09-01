@@ -5,22 +5,25 @@
     padding: 130px 0 4.8rem 0;
   }
   &__bloc-graphic {
-    max-width: 1440px;
-    min-width: calc(835px + 31px + 258px);
     height: calc(320px + 30px + 262px);
     margin: 2rem auto;
     display: flex;
     justify-content: center;
     gap: 2rem;
+    padding-right: 2rem;
     &__bloc-chart {
       gap: 2rem;
       display: flex;
-      width: 835px;
+      min-width: 675px;
+      width: 100%;
+      height: 100%;
       flex-direction: column;
+      justify-content: space-between;
     }
     &__bloc-otherchart {
       display: flex;
       justify-content: space-between;
+      gap: 2rem;
     }
 
     &__statcard {
@@ -30,6 +33,41 @@
       align-items: flex-end;
       margin: auto 0;
       height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .dashboard {
+    &__bloc-header {
+      padding: 110px 0 2rem 0;
+    }
+    &__bloc-graphic {
+      margin-top: 0;
+      margin-left: 1rem;
+      justify-content: space-between;
+      height: calc(250px + 30px + 230px);
+      gap: 0.5rem;
+      &__bloc-otherchart {
+        gap: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .dashboard {
+    &__bloc-header {
+      padding: 110px 0 1rem 0;
+    }
+    &__bloc-graphic {
+      margin-left: 0;
+      justify-content: space-between;
+      height: calc(250px + 30px + 230px);
+      gap: 0.8rem;
+      padding-right: 0.5rem;
+      &__bloc-otherchart {
+        gap: 1rem;
+      }
     }
   }
 }

@@ -22,8 +22,8 @@ const GraphRadarChart = ({ perf }) => {
 
   return (
     <div className="radarchart">
-      <ResponsiveContainer width={"100%"} height={263}>
-        <RadarChart outerRadius={75} height={263} data={datas}>
+      <ResponsiveContainer>
+        <RadarChart outerRadius={75} data={datas}>
           <PolarGrid />
           <PolarAngleAxis
             dataKey="kind"

@@ -87,6 +87,7 @@ const Dashboard = () => {
             setIsData(true);
           }
         } catch (error) {
+          console.log(error);
           setGetError(true);
           setFirstFetch(false);
           setIsData(false);
@@ -115,7 +116,7 @@ const Dashboard = () => {
           navigate("/error");
           console.log("Error 503 Service Unavailable");
         }
-      }, 1500);
+      }, 900);
       return () => clearTimeout(launchError);
     }
   }, [isData, scores, localStorage.getItem("error")]);

@@ -1,6 +1,6 @@
 .barchart__container {
   position: relative;
-  width: 835px;
+  width: 100%;
   height: 320px;
   background: #f8f8f8;
   border-radius: 10px;
@@ -36,4 +36,14 @@
 }
 .into__tooltip-list {
   font-size: 10px;
+}
+@media screen and (max-width: 1330px) {
+  .barchart__container {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .barchart__container {
+    height: 220px;
+  }
 }

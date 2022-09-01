@@ -1,7 +1,22 @@
 .header-container {
-    &__accueil {
-        & span {
-            color: red;
-        }
+  &__accueil {
+    & span {
+      color: red;
     }
+  }
+}
+@media screen and (max-width: 1330px) {
+  .header-container {
+    & h1 {
+      font-size: 2em;
+    }
+    & h3 {
+      font-size: 1em;
+    }
+    &__accueil {
+      & span {
+        color: red;
+      }
+    }
+  }
 }

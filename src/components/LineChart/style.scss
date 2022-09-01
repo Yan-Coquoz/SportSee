@@ -1,10 +1,11 @@
 .linechart {
-  width: 258px;
+  width: 100%;
   height: 263px;
   background-color: red;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  min-width: 176px;
   &:hover {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   }
@@ -31,4 +32,14 @@
 }
 .recharts-layer.recharts-line + .recharts-curve.recharts-line-curve {
   width: 258px !important;
+}
+@media screen and (max-width: 1330px) {
+  .linechart {
+    height: 230px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .linechart {
+    height: 210px;
+  }
 }
