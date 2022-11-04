@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SportSee/static/css/main.84ce784d.css",
+    "main.js": "/SportSee/static/js/main.d42ed048.js",
+    "static/media/logo.svg": "/SportSee/static/media/logo.91308fbcbce811907c09885e1241b59f.svg",
+    "static/media/natation.svg": "/SportSee/static/media/natation.c135dfed9473b0728721ce9a4c20819a.svg",
+    "static/media/cyclisme.svg": "/SportSee/static/media/cyclisme.22f466fe8b96cfda1498781030e75542.svg",
+    "static/media/carbs.svg": "/SportSee/static/media/carbs.a633f839fa13df8846235e99ca7c8646.svg",
+    "static/media/fat.svg": "/SportSee/static/media/fat.5f240256891bde52bc80e02f82371dd7.svg",
+    "static/media/protein.svg": "/SportSee/static/media/protein.fcd07c7dcbfd809e279245a02df9c388.svg",
+    "static/media/meditation.svg": "/SportSee/static/media/meditation.e6da2f731117475422a8c38c6684702f.svg",
+    "static/media/calories.svg": "/SportSee/static/media/calories.3067c742293e6d0833f654a885812c50.svg",
+    "static/media/musculation.svg": "/SportSee/static/media/musculation.c9f62cf1ca88da4b2dee77390edd0fe3.svg",
+    "index.html": "/SportSee/index.html",
+    "main.84ce784d.css.map": "/SportSee/static/css/main.84ce784d.css.map",
+    "main.d42ed048.js.map": "/SportSee/static/js/main.d42ed048.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84ce784d.css",
+    "static/js/main.d42ed048.js"
+  ]
+}
