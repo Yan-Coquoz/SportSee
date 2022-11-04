@@ -14,7 +14,6 @@ export function reFormatDatas(obj) {
       const frenchDatas = englishToFrench(obj.kind[key + 1]);
       nbrKind.kind = fromLowerToUpperCase(frenchDatas);
     }
-
     return nbrKind;
   });
 }
@@ -25,20 +24,15 @@ export function reFormatDatas(obj) {
  * @returns the French translation of the English word passed in as an argument.
  */
 function englishToFrench(str) {
-  switch (str) {
-    case "energy":
-      return "energie";
-    case "strength":
-      return "force";
-    case "speed":
-      return "vitesse";
-    case "intensity":
-      return "intensité";
-    case "cardio":
-      return "cardio";
-    case "endurance":
-      return "endurance";
-  }
+  const words = {
+    energy: "énergie",
+    strength: "force",
+    speed: "vitesse",
+    intensity: "intensité",
+    cardio: "cardio",
+    endurance: "endurance",
+  };
+  return words[str];
 }
 
 /**
