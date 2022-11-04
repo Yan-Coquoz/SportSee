@@ -26,7 +26,6 @@ const App = () => {
             <Route path=":id" element={<Dashboard />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
-
           <Route path="error" element={<Error />} />
         </Routes>
       </div>

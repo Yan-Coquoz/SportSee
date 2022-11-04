@@ -59,3 +59,15 @@ dev dependencies:
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/sass)
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/prettier)
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/eslint) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/eslint-config-prettier) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/SportSee/dev/eslint-plugin-react)
+
+You can generate jsdoc after cloning.
+
+```bash
+npm run jsdoc
+```
+
+to use it, go to `/docs` an open `global.html`
+
+## Backend
+
+[Repository du backend](https://github.com/Yan-Coquoz/P12-Sportsee-backend)

@@ -4,6 +4,7 @@
     "name": "Yan Coquoz",
     "email": "yan.coquoz@gmail.com"
   },
+  "homepage": "https://Yan-Coquoz.github.io/SportSee",
   "version": "0.1.0",
   "scripts": {
     "start": "react-scripts start",
@@ -11,7 +12,9 @@
     "eject": "react-scripts eject",
     "clean": "rm -rf build dist docs",
     "clean:all": "rm -fr node_modules build dist package-lock.json",
-    "jsdoc": "jsdoc -c jsdoc.json"
+    "jsdoc": "jsdoc -c jsdoc.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +47,7 @@
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
+    "gh-pages": "^4.0.0",
     "jsdoc": "^3.6.11",
     "prettier": "^2.7.1",
     "sass": "^1.54.4"
